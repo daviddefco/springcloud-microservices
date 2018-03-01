@@ -1,3 +1,5 @@
 spring:
   application:
     name: adjective-client
+  profiles:
+    active: adjective

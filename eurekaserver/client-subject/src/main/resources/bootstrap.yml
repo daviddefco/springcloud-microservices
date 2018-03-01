@@ -1,3 +1,5 @@
 spring:
   application:
     name: subject-client
+  profiles:
+    active: subject
