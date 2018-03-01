@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: config # Name of the yml file in the config server
+  cloud:
+    config:
+      uri: http://localhost:8001 # URI of the config server
+server:
+  port: 8002
+
