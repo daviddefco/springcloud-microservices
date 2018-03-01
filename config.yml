@@ -1,0 +1,4 @@
+# Config file to use by the Spring Cloud Config server
+
+# Config for Spring Cloud Config client example
+salutation: Aye
