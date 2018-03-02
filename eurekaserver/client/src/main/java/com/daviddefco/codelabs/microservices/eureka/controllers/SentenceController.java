@@ -15,7 +15,7 @@ import java.util.List;
 public class SentenceController {
 
     @Autowired
-    DiscoveryClient discoveryClient;
+    RestTemplate template;
 
     @GetMapping("/sentence")
     public @ResponseBody String getSentence() {
@@ -29,13 +29,6 @@ public class SentenceController {
     }
 
     public String getWord(String service) {
-        List<ServiceInstance> list = discoveryClient.getInstances(service);
-        if (list != null && list.size() > 0 ) {
-            URI uri = list.get(0).getUri();
-            if (uri !=null ) {
-                return (new RestTemplate()).getForObject(uri,String.class);
-            }
-        }
-        return null;
+        return template.getForObject("http://" + service, String.class);
     }
 }
