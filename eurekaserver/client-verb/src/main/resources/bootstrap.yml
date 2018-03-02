@@ -1,5 +1,0 @@
-spring:
-  application:
-    name: verb-client
-  profiles:
-    active: verb

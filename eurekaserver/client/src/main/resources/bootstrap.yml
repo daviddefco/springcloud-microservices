@@ -1,0 +1,37 @@
+# Depending on which profile is active, the application gives
+# itself a different name when registering with Eureka
+---
+spring:
+  profiles: sentence
+  application:
+    name: sentence-client
+
+---
+spring:
+  profiles: subject
+  application:
+    name: subject-client
+
+---
+spring:
+  profiles: verb
+  application:
+    name: verb-client
+
+---
+spring:
+  profiles: article
+  application:
+    name: article-client
+
+---
+spring:
+  profiles: adjective
+  application:
+    name: adjective-client
+
+---
+spring:
+  profiles: noun
+  application:
+    name: noun-client

@@ -19,6 +19,9 @@
         <module>client-adjective</module>
         <module>client-noun</module>
         <module>client-sentence</module>
+        <module>client-words</module>
+        <module>client</module>
+        <module>client</module>
     </modules>
 
     <dependencies>
