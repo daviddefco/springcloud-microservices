@@ -13,14 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>server</module>
-        <module>client-subject</module>
-        <module>client-verb</module>
-        <module>client-article</module>
-        <module>client-adjective</module>
-        <module>client-noun</module>
-        <module>client-sentence</module>
-        <module>client-words</module>
-        <module>client</module>
         <module>client</module>
     </modules>
 
