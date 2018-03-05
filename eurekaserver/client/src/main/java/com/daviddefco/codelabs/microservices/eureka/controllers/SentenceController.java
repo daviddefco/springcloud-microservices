@@ -1,5 +1,6 @@
 package com.daviddefco.codelabs.microservices.eureka.controllers;
 
+import com.daviddefco.codelabs.microservices.eureka.services.SentenceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -15,20 +16,10 @@ import java.util.List;
 public class SentenceController {
 
     @Autowired
-    RestTemplate template;
+    SentenceService sentenceService;
 
     @GetMapping("/sentence")
     public @ResponseBody String getSentence() {
-        return
-            getWord("subject-client") + " "
-            + getWord("verb-client") + " "
-            + getWord("article-client") + " "
-            + getWord("adjective-client") + " "
-            + getWord("noun-client") + "."
-        ;
-    }
-
-    public String getWord(String service) {
-        return template.getForObject("http://" + service, String.class);
+        return sentenceService.buildSentence();
     }
 }
