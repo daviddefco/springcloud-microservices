@@ -1,6 +1,6 @@
 package com.daviddefco.codelabs.microservices.eureka.services;
 
-import com.daviddefco.codelabs.microservices.eureka.dao.WordDao;
+import com.daviddefco.codelabs.microservices.eureka.dao.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,28 +8,28 @@ import org.springframework.stereotype.Service;
 public class SentenceServiceImpl implements SentenceService {
 
     @Autowired
-    private WordDao adjectiveDaoImpl;
+    private AdjectiveClient adjectiveClient;
 
     @Autowired
-    private WordDao articleDaoImpl;
+    private ArticleClient articleClient;
 
     @Autowired
-    private WordDao nounDaoImpl;
+    private NounClient nounClient;
 
     @Autowired
-    private WordDao subjectDaoImpl;
+    private SubjectClient subjectClient;
 
     @Autowired
-    private WordDao verbDaoImpl;
+    private VerbClient verbClient;
 
     @Override
     public String buildSentence() {
         return String.format("%s %s %s %s %s",
-            subjectDaoImpl.getWord().getWord(),
-            verbDaoImpl.getWord().getWord(),
-            articleDaoImpl.getWord().getWord(),
-            adjectiveDaoImpl.getWord().getWord(),
-            nounDaoImpl.getWord().getWord()
+            subjectClient.getWord(),
+            verbClient.getWord(),
+            articleClient.getWord(),
+            adjectiveClient.getWord(),
+            nounClient.getWord()
         );
     }
 }

@@ -9,4 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Word {
     private String word;
+
+    @Override
+    public String toString() {
+        return word;
+    }
 }
