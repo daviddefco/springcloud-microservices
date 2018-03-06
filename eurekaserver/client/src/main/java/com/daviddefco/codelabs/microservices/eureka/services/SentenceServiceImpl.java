@@ -8,28 +8,28 @@ import org.springframework.stereotype.Service;
 public class SentenceServiceImpl implements SentenceService {
 
     @Autowired
-    private AdjectiveClient adjectiveDaoImpl;
+    private AdjectiveClient adjectiveClient;
 
     @Autowired
-    private ArticleClient articleDaoImpl;
+    private ArticleClient articleClient;
 
     @Autowired
-    private NounClient nounDaoImpl;
+    private NounClient nounClient;
 
     @Autowired
-    private SubjectClient subjectDaoImpl;
+    private SubjectClient subjectClient;
 
     @Autowired
-    private VerbClient verbDaoImpl;
+    private VerbClient verbClient;
 
     @Override
     public String buildSentence() {
         return String.format("%s %s %s %s %s",
-            subjectDaoImpl.getWord().getWord(),
-            verbDaoImpl.getWord().getWord(),
-            articleDaoImpl.getWord().getWord(),
-            adjectiveDaoImpl.getWord().getWord(),
-            nounDaoImpl.getWord().getWord()
+            subjectClient.getWord(),
+            verbClient.getWord(),
+            articleClient.getWord(),
+            adjectiveClient.getWord(),
+            nounClient.getWord()
         );
     }
 }
