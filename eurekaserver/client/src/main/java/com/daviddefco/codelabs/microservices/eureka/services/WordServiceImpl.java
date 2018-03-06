@@ -2,6 +2,7 @@ package com.daviddefco.codelabs.microservices.eureka.services;
 
 import com.daviddefco.codelabs.microservices.eureka.dao.*;
 import com.daviddefco.codelabs.microservices.eureka.domain.Word;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +24,13 @@ public class WordServiceImpl implements WordService {
     private VerbClient verbClient;
 
     @Override
+    @HystrixCommand(fallbackMethod = "defaultSubject")
     public Word getSubject() {
         return subjectClient.getWord();
+    }
+
+    public Word defaultSubject() {
+        return new Word("Someone");
     }
 
     @Override
@@ -38,8 +44,13 @@ public class WordServiceImpl implements WordService {
     }
 
     @Override
+    @HystrixCommand(fallbackMethod = "defaultAdjective")
     public Word getAdjective() {
         return adjectiveClient.getWord();
+    }
+
+    public Word defaultAdjective() {
+        return new Word("");
     }
 
     @Override
