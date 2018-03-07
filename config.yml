@@ -1,7 +1,9 @@
 # Config file to use by the Spring Cloud Config server
 
 # Config for Spring Cloud Config client example
-salutation: Aye
+salutation:
+  formula: Aye
+  tail-question: how are u today?
 
 # Config for Eureka server code sample
 eureka:
