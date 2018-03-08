@@ -1,6 +1,5 @@
 package com.daviddefco.codelabs.microservices.eureka.services;
 
-import com.daviddefco.codelabs.microservices.eureka.dao.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
