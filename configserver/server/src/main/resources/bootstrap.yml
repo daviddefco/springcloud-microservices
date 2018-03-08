@@ -1,0 +1,10 @@
+encrypt:
+  key: secret
+
+security:
+  user:
+    password: '{cipher}39ab90600b5e16915735da118a720138e85db1cfe6d7bfd8ef5d6e3645113285'
+
+logging:
+  level:
+    org.springframework.security: debug
