@@ -17,9 +17,12 @@
     </modules>
 
     <dependencies>
+        <!-- Dependency to use the Spring config bus -->
+        <!--
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
+        -->
     </dependencies>
 </project>
