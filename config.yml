@@ -2,7 +2,7 @@
 
 # Config for Spring Cloud Config client example
 salutation:
-  formula: Aye
+  formula: '{cyper}40f28a628be173f30f525148effe51d70f363f32b510967b9e797d60e3e497b7'
   tail-question: how are u today?
 
 # Config for Eureka server code sample
